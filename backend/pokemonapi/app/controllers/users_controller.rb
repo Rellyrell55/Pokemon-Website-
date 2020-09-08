@@ -5,11 +5,11 @@ class UsersController < ApplicationController
     end
     
     def create 
-        user = User.create(
+        @user = User.create(
             username: params[:username],
             email: params[:email],
             password: params[:password]
         )
-        redirect_to "http://localhost:3001"
+        render json: { user: @user}, status: :created
     end
 end

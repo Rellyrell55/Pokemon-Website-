@@ -2,15 +2,17 @@ div{
     display: flex;
     flex-flow: wrap;
     align-content: space-between;
-    padding: 10px;
-    margin: 15px;
-    width: 50px;
 }
 
-
+main{
+    display: flex;
+    flex-flow: wrap;
+    align-content: space-around;
+}
 
 img{
-
+    width: 350px;
+    height: 400px;
 }
 
 h2{
