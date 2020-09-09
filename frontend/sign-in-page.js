@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 //     fetch ("http://localhost:3000/users")
 //         .then (response => response.json())
 //         .then (users => users.find( user => {
@@ -29,3 +20,11 @@
 //     }
 // })
 // }))
+
+// document.getElementById("signIn").addEventListener("click", function () {
+//   document.querySelector("bg-modal").style.display = "flex";
+// });
+
+// document.querySelector("close").addEventListener("click", function () {
+//   document.querySelector("bg-model").style.display = "none";
+// });

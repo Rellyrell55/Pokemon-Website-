@@ -11,7 +11,8 @@ fetch("http://localhost:3000/pokemon_cards")
       const like = document.createElement("input");
 
       //muniplate
-      name.textContent = `${card.name} (Pokedex #${card.pokedexNumber})`;
+      cardDiv.className = "card";
+      name.textContent = card.name;
       name.className = "pokemon";
       like.value = "♥️";
       like.type = "submit";
@@ -24,3 +25,21 @@ fetch("http://localhost:3000/pokemon_cards")
       cardDiv.append(name, like, cardImage);
     })
   );
+
+//Pop-up for user sign in
+document.getElementById("signIn").addEventListener("click", function () {
+  document.querySelector(".signIn-modal").style.display = "flex";
+});
+
+document.querySelector(".close").addEventListener("click", function () {
+  document.querySelector(".signIn-modal").style.display = "none";
+});
+
+//Pop-up to create user
+document.getElementById("create").addEventListener("click", function () {
+  document.querySelector(".create-modal").style.display = "flex";
+});
+
+document.querySelector(".close").addEventListener("click", function () {
+  document.querySelector(".create-modal").style.display = "none";
+});
