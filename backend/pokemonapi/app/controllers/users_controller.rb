@@ -10,6 +10,6 @@ class UsersController < ApplicationController
             email: params[:email],
             password: params[:password]
         )
-        render json: { user: @user}, status: :created
+        redirect_to "http://localhost:3001", status: :created
     end
 end

@@ -10,8 +10,34 @@
   <body>
     <h1>Pokemon Cards</h1>
     <div class="topNav">
-      <a href="user_create_page.html">Create User</a>
-      <a href="user_signin_page.html">Sign In</a>
+      <a href="#" id="create" class="create">Create User</a>
+      <div class="create-modal">
+        <div class="model-content">
+          <div class="close">+</div>
+          <form action="http://localhost:3000/users" method="post">
+            <input type="text" placeholder="Username" name="username" />
+            <input type="text" placeholder="Email" name="email" />
+            <input type="text" placeholder="Password" name="password" />
+            <input type="submit" value="Create User" />
+          </form>
+        </div>
+      </div>
+
+      <a href="#" id="signIn" class="signIn">Sign In</a>
+      <div class="signIn-modal">
+        <div class="model-content">
+          <div class="close">+</div>
+          <img
+            id="userImg"
+            src="https://i1.wp.com/berkeleyglobalsociety.com/wp-content/themes/bls/assets/images/blank_person.gif?ssl=1"
+          />
+          <form action="http://localhost:3000/login" method="POST">
+            <input type="text" placeholder="Username" name="username" />
+            <input type="text" placeholder="Password" name="password" />
+            <input type="submit" value="Login" />
+          </form>
+        </div>
+      </div>
     </div>
     <main id="main"></main>
   </body>
