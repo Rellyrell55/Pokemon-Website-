@@ -100,3 +100,19 @@ img#userImg {
   align-content: center;
   display: none;
 }
+
+#btn{
+  position: relative;
+  display: flex;
+  bottom: 120%;
+  left: 50%;
+  font-size: 2em;
+  transform: translate(-50%);
+  transition: 0.4s;
+}
+
+#btn:hover{
+  color: #f50057;
+}
+
+

@@ -1,3 +1,5 @@
+PokemonCard.destroy_all
+
 
 require 'pry'
 require 'rest-client'
@@ -9,7 +11,7 @@ cards = Pokemon::Card.where(set: 'base', supertype: 'pokemon')
 
 
 cards.map do |card|
-    PokemonCard.create(
+    @singleCard = PokemonCard.create(
         name: card.name, 
         pokedexNumber: card.national_pokedex_number,
         imageURLHiRes: card.image_url_hi_res,
@@ -17,6 +19,10 @@ cards.map do |card|
         types: card.types
     )
 end
+
+# @singleCard.sort do |dexHigh, dexLow|
+#     binding.pry 
+# end
 
 
 

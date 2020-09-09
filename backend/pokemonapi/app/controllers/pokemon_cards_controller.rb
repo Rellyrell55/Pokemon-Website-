@@ -4,4 +4,12 @@ class PokemonCardsController < ApplicationController
 
         render json: @cards
     end
+
+    def update 
+        @card = PokemonCard.find(params[:id])
+        @card.update(
+            like: params[:like]
+        )
+        render json: @card 
+    end
 end
