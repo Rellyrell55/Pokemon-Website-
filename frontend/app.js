@@ -1,13 +1,16 @@
 const main = document.querySelector("main");
 
-var btn = document.getElementById('btn')
-
-function Toggle(){
-      if(btn.classList.contains()){
-        btn.classList.remove('far');
-        btn.classList.add("fas");
-      }
-}
+// let btn = document.getElementsByTagName('btn')
+// console.log(btn)
+//   function Toggle(btn){
+//     if(btn.classList.contains('far')){
+//       btn.classList.remove('far');
+//       btn.classList.add('fas');
+//     }else{
+//       btn.className.remove('fas')
+//         btn.className.add('fas')
+//     }
+// }
 
 fetch("http://localhost:3000/pokemon_cards")
   .then((response) => response.json())
@@ -18,31 +21,46 @@ fetch("http://localhost:3000/pokemon_cards")
       const name = document.createElement("h2");
       const cardImage = document.createElement("img");
       const likeIcon = document.createElement("i")
+      
 
       //muniplate
-      function Toggle(){
-        if(btn.classList.contains()){
-          btn.classList.remove('far');
-          btn.classList.add("fas");
-        }
-  }
       cardDiv.className = "card";
       name.textContent = card.name;
       name.className = "pokemon";
-      likeIcon.id = "btn"
       likeIcon.className = "far fa-heart"
-      likeIcon.onclick = Toggle
-      // like.type = "submit";
-      // like.id = "pokemonLike";
-      // like.value = likeIcon;
+      likeIcon.id = "btn"
+      likeIcon.tagName = "btn"
+      likeIcon.onclick = function(){
+        if(likeIcon.classList.contains('far')){
+          likeIcon.classList.remove('far');
+          likeIcon.classList.add('fas');
+        }else{
+          likeIcon.className.remove('fas')
+          likeIcon.className.add('far')
+        }
+      }
+      // likeIcon.innerHTML = `<i onclick="Toggle()" id = "btn" class="far fa-heart" >`
       cardImage.src = card.imageURLHiRes;
       cardImage.id = "image";
 
       //append
       main.append(cardDiv);
-      cardDiv.append(name, likeIcon, cardImage);
+      cardDiv.appendChild(likeIcon)
+      cardDiv.append(name, cardImage);
     })
   );
+
+//   let btn = document.getElementById('btn')
+//   console.log(btn)
+//     function Toggle(){
+//       if(btn.classList.contains('far')){
+//         btn.classList.remove('far');
+//         btn.classList.add('fas');
+//       }else{
+//         btn.className.remove('fas')
+//           btn.className.add('fas')
+//       }
+// }
 
 //Pop-up for user sign in
 document.getElementById("signIn").addEventListener("click", function () {
@@ -63,13 +81,45 @@ document.querySelector(".close").addEventListener("click", function () {
 });
 
 
-// var btn = Document.getElementById('btn')
-// function Toggle(){
-//   if(btn.classList.contains()){
-//     btn.classList.remove('far');
-//     btn.classList.add("fas");
+// document.getElementsByTagName("btn").addEventListener("click",function () {
+//       if(btn.classList.contains('far')){
+//         btn.classList.remove('far');
+//         btn.classList.add('fas');
+//       }else{
+//         btn.className.remove('fas')
+//           btn.className.add('fas')
+//       }
 //   }
-// }
+// )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Like Function 
 

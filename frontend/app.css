@@ -9,7 +9,8 @@ main {
 }
 
 div.card {
-  margin: 25px;
+  
+  margin: 50px;
   padding: 5px;
   border-style: solid;
   border-radius: 10px;
@@ -103,9 +104,9 @@ img#userImg {
 
 #btn{
   position: relative;
-  display: flex;
+  display: flex-box;
   bottom: 120%;
-  left: 50%;
+  left: 7%;
   font-size: 2em;
   transform: translate(-50%);
   transition: 0.4s;
@@ -115,4 +116,11 @@ img#userImg {
   color: #f50057;
 }
 
-
+#banner{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: auto;
+  place-content: center;
+  
+}
