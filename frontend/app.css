@@ -16,6 +16,23 @@ h1 {
 
 a {
   color: red;
+  text-decoration: none;
+  font-family: Source sans Pro;
+  font-weight: lighter;
+}
+
+a::after {
+  content: " ";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #fff;
+  transition: width 0.3s;
+}
+
+a:hover::after {
+  width: 100%;
+  transition: width 0.3s;
 }
 
 main {
