@@ -1,14 +1,5 @@
 const main = document.querySelector("main");
 
-var btn = document.getElementById('btn')
-
-function Toggle(){
-      if(btn.classList.contains()){
-        btn.classList.remove('far');
-        btn.classList.add("fas");
-      }
-}
-
 fetch("http://localhost:3000/pokemon_cards")
   .then((response) => response.json())
   .then((cards) =>
@@ -17,30 +8,21 @@ fetch("http://localhost:3000/pokemon_cards")
       const cardDiv = document.createElement("div");
       const name = document.createElement("h2");
       const cardImage = document.createElement("img");
-      const likeIcon = document.createElement("i")
+      const iconDiv = document.createElement("div");
 
       //muniplate
-      function Toggle(){
-        if(btn.classList.contains()){
-          btn.classList.remove('far');
-          btn.classList.add("fas");
-        }
-  }
+
       cardDiv.className = "card";
       name.textContent = card.name;
       name.className = "pokemon";
-      likeIcon.id = "btn"
-      likeIcon.className = "far fa-heart"
-      likeIcon.onclick = Toggle
-      // like.type = "submit";
-      // like.id = "pokemonLike";
-      // like.value = likeIcon;
+      iconDiv.innerHTML = `<i onclick="toggle()" class="far fa-heart" id="bttn"></i>`;
       cardImage.src = card.imageURLHiRes;
       cardImage.id = "image";
 
       //append
       main.append(cardDiv);
-      cardDiv.append(name, likeIcon, cardImage);
+      cardDiv.appendChild(iconDiv);
+      cardDiv.append(name, cardImage);
     })
   );
 
@@ -62,16 +44,7 @@ document.querySelector(".close").addEventListener("click", function () {
   document.querySelector(".create-modal").style.display = "none";
 });
 
-
-// var btn = Document.getElementById('btn')
-// function Toggle(){
-//   if(btn.classList.contains()){
-//     btn.classList.remove('far');
-//     btn.classList.add("fas");
-//   }
-// }
-
-//Like Function 
+//Like Function
 
 // document.querySelector("input#pokemonLike").addEventListener("click", function(){
 //   console.log("hello")
