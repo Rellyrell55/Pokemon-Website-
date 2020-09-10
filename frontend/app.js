@@ -4,7 +4,6 @@ const sortbtn = document.querySelector("button.sortBtn")
 const h1 = document.querySelector('h1')
 
 
-
 function byPokedexNumber(a, b) {
   return a.pokedexNumber - b.pokedexNumber
 }
@@ -12,7 +11,6 @@ function byPokedexNumber(a, b) {
 function sortedCards(cards){
   cards.sort(byPokedexNumber)
 }
-
 fetch("http://localhost:3000/pokemon_cards")
   .then((response) => response.json())
   .then((cards) =>
