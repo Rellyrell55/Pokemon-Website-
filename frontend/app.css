@@ -36,12 +36,16 @@ div.topNav {
 }
 
 div.card {
-  
   margin: 50px;
   padding: 5px;
   border-style: solid;
   border-radius: 10px;
   border-color: white;
+  display: relative;
+}
+
+div.card:hover {
+  transform: scale(1.1);
 }
 
 img {
@@ -50,7 +54,6 @@ img {
   align-content: center;
   border-radius: 6px;
   border: 2px;
-  border-color: ivory;
 }
 
 image {
@@ -147,4 +150,3 @@ img#userImg {
 #btn:hover {
   color: #f50057;
 }
-

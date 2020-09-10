@@ -1,5 +1,28 @@
 const main = document.querySelector("main");
 
+function dynamicsort(property, order) {
+  let sort_order = 1;
+  if (order === "desc") {
+    sort_order = -1;
+  }
+  return function (a, b) {
+    // a should come before b in the sorted order
+    if (a[property] < b[property]) {
+      return -1 * sort_order;
+      // a should come after b in the sorted order
+    } else if (a[property] > b[property]) {
+      return 1 * sort_order;
+      // a and b are the same
+    } else {
+      return 0 * sort_order;
+    }
+  };
+}
+
+fetch("http://localhost:3000/pokemon_cards")
+  .then((response) => response.json())
+  .then((cards) => cards.sort(dynamicsort("pokedexNumber", "desc")));
+
 fetch("http://localhost:3000/pokemon_cards")
   .then((response) => response.json())
   .then((cards) =>
@@ -8,30 +31,30 @@ fetch("http://localhost:3000/pokemon_cards")
       const cardDiv = document.createElement("div");
       const name = document.createElement("h2");
       const cardImage = document.createElement("img");
-      const likeIcon = document.createElement("i")
+      const likeIcon = document.createElement("i");
 
       //muniplate
       cardDiv.className = "card";
       name.textContent = card.name;
       name.className = "pokemon";
-      likeIcon.className = "far fa-heart"
-      likeIcon.id = "btn"
-      likeIcon.tagName = "btn"
-      likeIcon.onclick = function(){
-        if(likeIcon.classList.contains('far')){
-          likeIcon.classList.remove('far');
-          likeIcon.classList.add('fas');
-        }else{
-          likeIcon.className.remove('fas')
-          likeIcon.className.add('far')
+      likeIcon.className = "far fa-heart";
+      likeIcon.id = "btn";
+      likeIcon.tagName = "btn";
+      likeIcon.onclick = function () {
+        if (likeIcon.classList.contains("far")) {
+          likeIcon.classList.remove("far");
+          likeIcon.classList.add("fas");
+        } else {
+          likeIcon.className.remove("fas");
+          likeIcon.className.add("far");
         }
-      }
+      };
       cardImage.src = card.imageURLHiRes;
       cardImage.id = "image";
 
       //append
       main.append(cardDiv);
-      cardDiv.appendChild(likeIcon)
+      cardDiv.appendChild(likeIcon);
       cardDiv.append(name, cardImage);
     })
   );
@@ -65,8 +88,6 @@ document.getElementById("create").addEventListener("click", function () {
 document.querySelector(".close").addEventListener("click", function () {
   document.querySelector(".create-modal").style.display = "none";
 });
-
-
 
 // document.querySelector("input#pokemonLike").addEventListener("click", function(){
 //   console.log("hello")
