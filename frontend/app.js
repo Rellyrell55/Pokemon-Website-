@@ -1,17 +1,5 @@
 const main = document.querySelector("main");
 
-// let btn = document.getElementsByTagName('btn')
-// console.log(btn)
-//   function Toggle(btn){
-//     if(btn.classList.contains('far')){
-//       btn.classList.remove('far');
-//       btn.classList.add('fas');
-//     }else{
-//       btn.className.remove('fas')
-//         btn.className.add('fas')
-//     }
-// }
-
 fetch("http://localhost:3000/pokemon_cards")
   .then((response) => response.json())
   .then((cards) =>
@@ -21,7 +9,6 @@ fetch("http://localhost:3000/pokemon_cards")
       const name = document.createElement("h2");
       const cardImage = document.createElement("img");
       const likeIcon = document.createElement("i")
-      
 
       //muniplate
       cardDiv.className = "card";
@@ -39,7 +26,6 @@ fetch("http://localhost:3000/pokemon_cards")
           likeIcon.className.add('far')
         }
       }
-      // likeIcon.innerHTML = `<i onclick="Toggle()" id = "btn" class="far fa-heart" >`
       cardImage.src = card.imageURLHiRes;
       cardImage.id = "image";
 
@@ -81,47 +67,6 @@ document.querySelector(".close").addEventListener("click", function () {
 });
 
 
-// document.getElementsByTagName("btn").addEventListener("click",function () {
-//       if(btn.classList.contains('far')){
-//         btn.classList.remove('far');
-//         btn.classList.add('fas');
-//       }else{
-//         btn.className.remove('fas')
-//           btn.className.add('fas')
-//       }
-//   }
-// )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Like Function 
 
 // document.querySelector("input#pokemonLike").addEventListener("click", function(){
 //   console.log("hello")
