@@ -8,7 +8,7 @@ class AuthenticationController < ApplicationController
                 render json: { error: "Password was incorect" }, status: :unauthorized
             else
                 # render json: { message: "you have been logged in" }, status: :created 
-                redirect_to "http://localhost:3001"
+                redirect_to "http://localhost:3001/user.html?id=#{@user.id}"
             end
         end
     end

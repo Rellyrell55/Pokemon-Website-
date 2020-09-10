@@ -4,6 +4,7 @@ const sortbtn = document.querySelector("button.sortBtn")
 const h1 = document.querySelector('h1')
 
 
+
 function byPokedexNumber(a, b) {
   return a.pokedexNumber - b.pokedexNumber
 }
@@ -11,6 +12,7 @@ function byPokedexNumber(a, b) {
 function sortedCards(cards){
   cards.sort(byPokedexNumber)
 }
+
 fetch("http://localhost:3000/pokemon_cards")
   .then((response) => response.json())
   .then((cards) =>
@@ -53,6 +55,23 @@ fetch("http://localhost:3000/pokemon_cards")
 const searchParams = new URLSearchParams(window.location.search)
 const id = searchParams.get('id')
 
+fetch(`http://localhost:3000/users/${id}`)
+  .then((response) => response.json())
+  .then( user => {
+    const welcomediv = document.createElement('div')
+    const ashQuote = document.createElement('p')
+
+    welcomediv.id = "welcome"
+    welcomediv.textContent = `Welcome ${user.username}`
+    ashQuote.textContent = `"'Cause i always play to win!" -Ash Ketchum`
+    ashQuote.id = "ashQuote"
+    
+    
+
+    topNav.appendChild(welcomediv)
+    h1.append(ashQuote)
+
+  })
 
 
 
