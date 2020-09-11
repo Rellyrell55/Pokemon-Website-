@@ -2,6 +2,8 @@ const main = document.querySelector("main");
 const topNav = document.querySelector("div.topNav")
 const sortbtn = document.querySelector("button.sortBtn")
 const h1 = document.querySelector('h1')
+const welcome = document.querySelector("div.welcome")
+console.log(welcome)
 
 
 
@@ -68,27 +70,7 @@ fetch(`http://localhost:3000/users/${id}`)
     
     
 
-    main.append(welcomediv)
+    welcome.append(welcomediv)
     h1.append(ashQuote)
 
   })
-
-
-
-//Pop-up for user sign in
-document.getElementById("signIn").addEventListener("click", function () {
-  document.querySelector(".signIn-modal").style.display = "flex";
-});
-
-document.querySelector(".close").addEventListener("click", function () {
-  document.querySelector(".signIn-modal").style.display = "none";
-});
-
-//Pop-up to create user
-document.getElementById("create").addEventListener("click", function () {
-  document.querySelector(".create-modal").style.display = "flex";
-});
-
-document.querySelector(".close").addEventListener("click", function () {
-  document.querySelector(".create-modal").style.display = "none";
-});
