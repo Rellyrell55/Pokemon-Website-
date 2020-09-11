@@ -21,18 +21,7 @@ fetch(pokemonURL).then(parseJSON).then(displayCards);
 //iterates through each card in array
 //use if/else to switch between sort if they press sort button
 function displayCards(cards) {
-  // if (cards.length > 0) {
-  //   cards.forEach(showCard);
-  // } else {
-  //   const noPokemon = document.createElement("p");
-  //   noPokemon.textContent = "Sorry, no pokemon match your criteria! 😭";
-  // }
-
-  if (sortbtn.onclick) {
-    cards.sort(byPokedexNumber).forEach(showCard);
-  } else {
-    cards.forEach(showCard);
-  }
+  cards.forEach(showCard);
 }
 
 function byPokedexNumber(a, b) {
