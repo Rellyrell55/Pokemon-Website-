@@ -68,7 +68,7 @@ fetch(`http://localhost:3000/users/${id}`)
     
     
 
-    topNav.appendChild(welcomediv)
+    main.append(welcomediv)
     h1.append(ashQuote)
 
   })
