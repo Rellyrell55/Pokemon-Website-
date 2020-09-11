@@ -1,6 +1,10 @@
 class PokemonCardsController < ApplicationController
     def index 
-        @cards = PokemonCard.all 
+        if params[:search]
+            @cards = PokemonCard.where('name LIKE ?', "%#{params[:search]}%")
+        else
+            @cards = PokemonCard.all 
+        end
 
         render json: @cards
     end

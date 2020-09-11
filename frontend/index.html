@@ -12,7 +12,6 @@
     ></script>
   </head>
   <body>
-
     <h1>Catch 'Em All</h1>
     <div class="topNav">
       <a href="#" id="create" class="create">Create User</a>
@@ -43,9 +42,12 @@
           </form>
         </div>
       </div>
-      <button onclick ="sortedCards" class = "sortBtn">
-        Sort by Pokedex Number 
-      </button>
+      <button id="sortBtn">Sort by Pokedex Number</button>
+      <form method="GET" action="http://localhost:3001">
+        <input type="text" name="search" placeholder="Search by Name" />
+
+        <input type="submit" value="search" />
+      </form>
     </div>
     <main id="main"></main>
   </body>
