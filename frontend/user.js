@@ -65,7 +65,7 @@ fetch(`http://localhost:3000/users/${id}`)
 
     welcomediv.id = "welcome"
     welcomediv.textContent = `Welcome ${user.username}`
-    ashQuote.textContent = `"'Cause i always play to win!" -Ash Ketchum`
+    ashQuote.textContent = `"'Cause I always play to win!" -Ash Ketchum`
     ashQuote.id = "ashQuote"
     
     

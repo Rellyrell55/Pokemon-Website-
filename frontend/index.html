@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokemon Cards!</title>
+    <link rel="icon" type="image/png" href="Favicon/favicon.ico"/>
     <script src="app.js" defer></script>
     <link rel="stylesheet" href="app.css" />
     <script
@@ -18,10 +19,14 @@
       <div class="create-modal">
         <div class="model-content">
           <div class="close">+</div>
+          <img
+            id="userImg"
+            src="https://i1.wp.com/berkeleyglobalsociety.com/wp-content/themes/bls/assets/images/blank_person.gif?ssl=1"
+          />
           <form action="http://localhost:3000/users" method="post">
             <input type="text" placeholder="Username" name="username" />
             <input type="text" placeholder="Email" name="email" />
-            <input type="text" placeholder="Password" name="password" />
+            <input type="password" placeholder="Password" name="password" />
             <input type="submit" value="Create User" />
           </form>
         </div>
@@ -37,13 +42,13 @@
           />
           <form action="http://localhost:3000/login" method="POST">
             <input type="text" placeholder="Username" name="username" />
-            <input type="text" placeholder="Password" name="password" />
+            <input type="password" placeholder="Password" name="password" />
             <input type="submit" value="Login" />
           </form>
         </div>
       </div>
       <button id="sortBtn">Sort by Pokedex Number</button>
-      <form method="GET" action="http://localhost:3001">
+      <form class = "search" method="GET" action="http://localhost:3001">
         <input type="text" name="search" placeholder="Search by Name" />
 
         <input type="submit" value="search" />

@@ -15,6 +15,6 @@ class UsersController < ApplicationController
             email: params[:email],
             password: params[:password]
         )
-        redirect_to "http://localhost:3001/user.html", status: :created
+        redirect_to "http://localhost:3001/user.html?id=#{@user.id}" #status: :created
     end
 end
